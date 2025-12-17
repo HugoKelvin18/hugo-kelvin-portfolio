@@ -1,4 +1,23 @@
-import { FaLinkedin, FaWhatsapp, FaEnvelope, FaGithub, FaCode } from "react-icons/fa";
+import { 
+  FaLinkedin, 
+  FaWhatsapp, 
+  FaEnvelope, 
+  FaGithub, 
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaFacebook,
+  FaChartLine,
+  FaChartBar,
+  FaUsers
+} from "react-icons/fa";
+import { 
+  SiTypescript, 
+  SiNestjs,
+  SiGoogleads,
+  SiGoogleanalytics
+} from "react-icons/si";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import foto from "../assets/foto.jpeg";
@@ -84,19 +103,19 @@ para negócios e pessoas.
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {[
-        "React",
-        "TypeScript",
-        "NestJS",
-        "HTML5",
-        "CSS3",
-        "Git & GitHub",
-      ].map((skill) => (
+        { name: "React", icon: FaReact },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "NestJS", icon: SiNestjs },
+        { name: "HTML5", icon: FaHtml5 },
+        { name: "CSS3", icon: FaCss3Alt },
+        { name: "Git & GitHub", icon: FaGitAlt },
+      ].map(({ name, icon: Icon }) => (
         <div
-          key={skill}
+          key={name}
           className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center hover:shadow-xl transition"
         >
-          <FaCode className="text-blue-900 text-4xl mb-4" />
-          <span className="text-lg font-semibold">{skill}</span>
+          <Icon className="text-blue-900 text-4xl mb-4" />
+          <span className="text-lg font-semibold">{name}</span>
         </div>
       ))}
     </div>
@@ -110,20 +129,20 @@ para negócios e pessoas.
 
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {[
-        "Meta Ads (Facebook & Instagram)",
-        "Google Ads",
-        "Google Analytics",
-        "Pixel de Conversão",
-        "Funil de Vendas",
-        "Geração de Leads",
-      ].map((skill) => (
+        { name: "Meta Ads (Facebook & Instagram)", icon: FaFacebook },
+        { name: "Google Ads", icon: SiGoogleads },
+        { name: "Google Analytics", icon: SiGoogleanalytics },
+        { name: "Pixel de Conversão", icon: FaChartLine },
+        { name: "Funil de Vendas", icon: FaChartBar },
+        { name: "Geração de Leads", icon: FaUsers },
+      ].map(({ name, icon: Icon }) => (
         <div
-          key={skill}
+          key={name}
           className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center hover:shadow-xl transition"
         >
-          <FaCode className="text-blue-900 text-4xl mb-4" />
+          <Icon className="text-blue-900 text-4xl mb-4" />
           <span className="text-lg font-semibold text-center">
-            {skill}
+            {name}
           </span>
         </div>
       ))}
